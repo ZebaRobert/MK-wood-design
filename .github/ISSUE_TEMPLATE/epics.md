@@ -1,17 +1,17 @@
 ---
-name: User Story
-about: User Stories and their accapptance criteria
-title: 'User Story: '
-labels: ''
+name: Epics
+about: Epics and their potencial user stories
+title: 'EPIC: '
+labels: EPIC
 assignees: ''
 
 ---
 
-### User Story
+### Epic
 
 As a [blank], I would like to be able to [blank], so that I can [blank].
 
-### Acceptance Criteria
+### Potencial User Story
 
 1. [Criterion 1]
 2. [Criterion 2]
