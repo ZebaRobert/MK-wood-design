@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-8ww3@)9eg5dghw48k8(n3$(ub&rk0@9lnj7i5c+6mtj!2+)&o_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'herokuapp.com',
@@ -79,10 +79,15 @@ WSGI_APPLICATION = 'MKWoodDesign.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'MKWoodDesign',
+        'USER': 'postgres',
+        'PASSWORD': 'zeba',
+        'HOST': 'localhost',
+        'PORT': '5432',  # Default PostgreSQL port
     }
 }
+
 
 
 # Password validation
