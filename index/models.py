@@ -6,8 +6,8 @@ from cloudinary.models import CloudinaryField
 class About(models.Model):
     title = models.CharField(max_length=200, unique=True)
     backgorund_image = CloudinaryField(
-        'image',
-        default='bg_placeholder'
+        'bgIMG',
+        default='bgPH'
     )
     content = models.TextField()
     
