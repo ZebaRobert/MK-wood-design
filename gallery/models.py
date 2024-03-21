@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.conf import settings
 
 # Create your models here.
 
@@ -7,7 +7,9 @@ RATING = ((0, "Unsatisfactory"), (1, "Below Average"), (2, "Satisfactory"), (3, 
 
 class Comments(models.Model):
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="comments"
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="comments"
     )
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
