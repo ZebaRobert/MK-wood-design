@@ -7,7 +7,8 @@ class About(models.Model):
     title = models.CharField(max_length=200, unique=True)
     backgorund_image = CloudinaryField(
         'bgIMG',
-        default='bgPH'
+        default='default/bgPH',
+        folder='background/'
     )
     content = models.TextField()
     

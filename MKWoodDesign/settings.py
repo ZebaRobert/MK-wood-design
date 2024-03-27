@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import django_heroku
+import cloudinary
 
 
 # Custom user model
@@ -45,6 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
+    'cloudinary',
     'index',
     'gallery',
     'UserDetails',
@@ -91,10 +94,18 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'zeba',
         'HOST': 'localhost',
-        'PORT': '5432',  # Default PostgreSQL port
+        'PORT': '5432', 
     }
 }
 
+# Cloudinary 
+          
+cloudinary.config( 
+  cloud_name = "dhnjqbynw", 
+  api_key = "783723727299137", 
+  api_secret = "MoVCBZJ_znZFVULUlPjTFKGNVWg" 
+)
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 # Password validation
