@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import django_heroku
 import cloudinary
+import os
+if os.path.isfile('env.py'):
+    import env
 
 
 # Custom user model
@@ -100,11 +103,8 @@ DATABASES = {
 
 # Cloudinary 
           
-cloudinary.config( 
-  cloud_name = "dhnjqbynw", 
-  api_key = "783723727299137", 
-  api_secret = "MoVCBZJ_znZFVULUlPjTFKGNVWg" 
-)
+cloudinary.config(cloudinary_url=os.environ.get('CLOUDINARY_URL'))
+
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
