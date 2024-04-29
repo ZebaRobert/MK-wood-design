@@ -6,7 +6,6 @@ from .models import About
 class AboutP(generic.ListView):
     querryset = About.objects
     template_name = "index/index.html"
-    paginate_by = 1
 
 def index(request):
 
