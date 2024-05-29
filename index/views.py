@@ -3,9 +3,11 @@ from django.views import generic
 from .models import About
 from django.shortcuts import render
 
-class AboutP(generic.ListView):
-    querryset = About.objects
+class AboutListView(generic.ListView):
+    queryset = About.objects.all()
     template_name = "index/index.html"
+    context_object_name = 'about_list'
 
 def index(request):
-    return render(request, 'index/index.html')
+    about_list = About.objects.all()
+    return render(request, 'index/index.html', {'about_list': about_list})

@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
-    Example element with utilities
-  </div>
-<h1>Welcome to the Index Page</h1>
-<p>This is the content of your index page.</p>
+    <h1>About list</h1>
+    <ul>
+        {% for about in about_list %}
+            <li>{{ about.title }}: {{ about.content }}</li>
+        {% endfor %}
+    </ul>
 {% endblock %}
