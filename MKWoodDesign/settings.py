@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'index',
     'gallery',
     'userdetails',
+    'contact',
 ]
 
 MIDDLEWARE = [
