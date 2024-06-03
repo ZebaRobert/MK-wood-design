@@ -14,18 +14,19 @@ from pathlib import Path
 import django_heroku
 import cloudinary
 import os
-if os.path.isfile('env.py'):
-    import env
 
+# Build paths inside the project.
+BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+STATICFILES_DIRS = [BASE_DIR / "static"]
+
+# Load environment variables from env.py
+if os.path.isfile(os.path.join(BASE_DIR, 'env.py')):
+    import env
 
 # Custom user model
 
 AUTH_USER_MODEL = 'userdetails.CustomUser'
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
-STATICFILES_DIRS = [BASE_DIR / "static"]
 
 
 # Quick-start development settings - unsuitable for production

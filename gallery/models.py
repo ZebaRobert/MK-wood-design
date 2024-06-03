@@ -19,4 +19,4 @@ class Comments(models.Model):
     class Meta:
         ordering = ["-created_on"]
     def __str__(self):
-        return f""
+        return f'{self.author.username} - {self.rating}'
