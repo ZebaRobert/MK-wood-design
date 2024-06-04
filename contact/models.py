@@ -5,7 +5,7 @@ from django.db import models
 # Storing contact submissions
 
 class ContactSubmissions(models.Model):
-    fullname = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
     email = models.EmailField()
     subject = models.CharField(max_length=200)
     message = models.TextField()
