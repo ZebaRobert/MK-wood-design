@@ -1,7 +1,6 @@
 let slideIndex = 0;
 showSlides();
 
-/*  */
 function showSlides() {
     let slides = document.querySelectorAll(".slide");
     slides.forEach((slide, index) => {
@@ -19,4 +18,24 @@ document.querySelector(".next").addEventListener("click", () => {
     showSlides();
 });
 
+function refreshReviews() {
+    fetch('/gallery/reviews/')
+        .then(response => response.json())
+        .then(data => {
+            let reviewsBox = document.querySelector(".reviews-box");
+            reviewsBox.innerHTML = "";
+            data.reviews.forEach(review => {
+                let reviewCard = `
+                    <div class="review-card">
+                        <h3>${review.author}</h3>
+                        <p>Rating: ${review.rating}</p>
+                        <p>${review.content}</p>
+                        <small>${review.created_on}</small>
+                    </div>`;
+                reviewsBox.innerHTML += reviewCard;
+            });
+        });
+}
+
+setInterval(refreshReviews, 20000);  // Refresh reviews every 20 seconds
 
