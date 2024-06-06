@@ -16,4 +16,16 @@
         <button class="next">❯</button>
     </div>
     </div>
+
+    <h2>Reviews</h2>
+    <div class="reviews-box">
+        {% for review in reviews %}
+            <div class="review-card">
+                <h3>{{ review.author.username }}</h3>
+                <p>Rating: {{ review.get_rating_display }}</p>
+                <p>{{ review.content }}</p>
+                <small>{{ review.created_on }}</small>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
