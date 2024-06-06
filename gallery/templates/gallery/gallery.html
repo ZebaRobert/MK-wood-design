@@ -1,11 +1,19 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 
 {% block content %}
-    <h1>Hello this is gallery</h1>
-    <h1>Leave a review</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Send</button>
-    </form>
+    <h1>Gallery</h1>
+    <div class="gallery-container">
+    <div class="gallery-slideshow">
+        {% for image in images %}
+        <div class="slide">
+        <img src="{{ image.image.url }}" alt="{{ image.title }}" />
+        <div class="description">{{ image.description }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="controls">
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+    </div>
+    </div>
 {% endblock %}
