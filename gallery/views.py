@@ -7,8 +7,9 @@ def gallery_view(request):
     images = GalleryImage.objects.all()
     reviews = list(Reviews.objects.all())
     random.shuffle(reviews)
-    reviews = reviews[:5]  # Take 5 random reviews
-    return render(request, 'gallery/gallery.html', {'images': images, 'reviews': reviews})
+    initial_reviews = reviews[:5]  # Take 5 random reviews
+    return render(request, 'gallery/gallery.html', {'images': images, 'initial_reviews': initial_reviews})
+
 
 def review_list_view(request):
     reviews = list(Reviews.objects.all())

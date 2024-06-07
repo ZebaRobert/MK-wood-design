@@ -1,7 +1,7 @@
 let slideIndex = 0;
+let slides = document.querySelectorAll(".slide");
 
 function showSlides() {
-    let slides = document.querySelectorAll(".slide");
     slides.forEach((slide, index) => {
         slide.style.display = index === slideIndex ? "block" : "none";
     });
@@ -39,3 +39,4 @@ function refreshReviews() {
 setInterval(refreshReviews, 20000);  // Refresh reviews every 20 seconds
 
 showSlides();
+

@@ -5,21 +5,22 @@
     <div class="gallery-container">
         <div class="gallery-slideshow">
             {% for image in images %}
-            <div class="slide">
-            	<img src="{{ image.image.url }}" alt="{{ image.title }}" />
-            <div class="description">{{ image.description }}</div>
-            </div>
+                <div class="slide">
+                    <img src="{{ image.image.url }}" alt="{{ image.title }}">
+                    <div class="description">{{ image.description }}</div>
+                </div>
             {% endfor %}
         </div>
-    <div class="controls">
-        <button class="prev">❮</button>
-        <button class="next">❯</button>
+        <div class="controls">
+            <button class="prev">❮</button>
+            <button class="next">❯</button>
+        </div>
     </div>
-    </div>
+
 
     <h2>Reviews</h2>
     <div class="reviews-box">
-        {% for review in reviews %}
+        {% for review in initial_reviews %}
             <div class="review-card">
                 <h3>{{ review.author.username }}</h3>
                 <p>Rating: {{ review.get_rating_display }}</p>
