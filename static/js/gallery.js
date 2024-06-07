@@ -1,5 +1,4 @@
 let slideIndex = 0;
-showSlides();
 
 function showSlides() {
     let slides = document.querySelectorAll(".slide");
@@ -39,3 +38,4 @@ function refreshReviews() {
 
 setInterval(refreshReviews, 20000);  // Refresh reviews every 20 seconds
 
+showSlides();

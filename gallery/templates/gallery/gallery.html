@@ -3,14 +3,14 @@
 {% block content %}
     <h1>Gallery</h1>
     <div class="gallery-container">
-    <div class="gallery-slideshow">
-        {% for image in images %}
-        <div class="slide">
-        <img src="{{ image.image.url }}" alt="{{ image.title }}" />
-        <div class="description">{{ image.description }}</div>
+        <div class="gallery-slideshow">
+            {% for image in images %}
+            <div class="slide">
+            	<img src="{{ image.image.url }}" alt="{{ image.title }}" />
+            <div class="description">{{ image.description }}</div>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-    </div>
     <div class="controls">
         <button class="prev">❮</button>
         <button class="next">❯</button>
