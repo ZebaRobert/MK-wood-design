@@ -9,8 +9,8 @@ def gallery_view(request):
     images = GalleryImage.objects.all()
     reviews = list(Reviews.objects.all())
     random.shuffle(reviews)
-    initial_reviews = reviews[:5]  # Take 5 random reviews
-    
+    selected_reviews = reviews[:5]  # Take 5 random reviews
+
     review_form = None
     if request.user.is_authenticated:
         if request.method == 'POST':
@@ -25,7 +25,7 @@ def gallery_view(request):
 
     return render(request, 'gallery/gallery.html', {
         'images': images,
-        'reviews': initial_reviews,
+        'reviews': selected_reviews,
         'review_form': review_form
     })
 
