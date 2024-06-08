@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .forms import UserProfileForm
+from .forms import UserProfileForm, ReviewForm
 from gallery.models import Reviews
 
 def login_view(request):
@@ -66,3 +66,11 @@ def edit_review(request, review_id):
     else:
         form = ReviewForm(instance=review)
     return render(request, 'userdetails/edit_review.html', {'form': form})
+
+@login_required
+def delete_review(request, review_id):
+    review = get_object_or_404(Reviews, id=review_id, author=request.user)
+    if request.method == 'POST':
+        review.delete()
+        return redirect('profile')
+    return render(request, 'userdetails/delete_review.html', {'review': review})
