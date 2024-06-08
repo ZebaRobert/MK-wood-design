@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import UserProfileForm
+from gallery.models import Reviews
 
 def login_view(request):
     if request.method == 'POST':
@@ -46,4 +47,10 @@ def profilePage(request):
             return redirect('profile')
     else:
         form = UserProfileForm(instance=request.user)
-    return render(request, 'userdetails/profile.html', {'form': form})
+    
+    user_reviews = Reviews.objects.filter(author=request.user)
+    
+    return render(request, 'userdetails/profile.html', {
+        'form': form,
+        'user_reviews': user_reviews
+    })
