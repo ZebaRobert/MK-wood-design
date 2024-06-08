@@ -21,4 +21,18 @@
         <button type="button" id="cancel-button" class="btn btn-secondary">Cancel</button>
     </form>
 </div>
+
+<h2>Your Reviews</h2>
+<div class="reviews-box">
+    {% for review in user_reviews %}
+        <div class="review-card">
+            <h3>{{ review.author.username }}</h3>
+            <p>Rating: {{ review.get_rating_display }}</p>
+            <p>{{ review.content }}</p>
+            <small>{{ review.created_on }}</small>
+            <a href="{% url 'edit_review' review.id %}" class="btn btn-warning">Edit</a>
+            <a href="{% url 'delete_review' review.id %}" class="btn btn-danger">Delete</a>
+        </div>
+    {% endfor %}
+</div>
 {% endblock %}
