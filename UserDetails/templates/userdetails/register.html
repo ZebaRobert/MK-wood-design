@@ -8,9 +8,6 @@
         {{ form.as_p }}
         <button type="submit">Register</button>
     </form>
-    <p>Already have an account? <a href="#" id="show-login">Login here</a></p>
-</div>
-<div id="login-form">
-    {% include 'userdetails/login.html' %}
+    <p>Already have an account? <a href="{% url 'login'%}" id="show-login">Login here</a></p>
 </div>
 {% endblock %}
