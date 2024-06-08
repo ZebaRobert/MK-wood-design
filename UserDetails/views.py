@@ -2,10 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import authenticate, login, logout
-
-
-def profilePage(request):
-    return HttpResponse("Hello, world. You're at the Profile.")
+from django.contrib.auth.decorators import login_required
 
 def login_view(request):
     if request.messages == 'POST':
@@ -35,3 +32,11 @@ def register_view(request):
     else:
         form = UserCreationForm()
     return render(request, 'authentication/register.html', {'form': form})
+
+def logout_view(request):
+    logout(request)
+    return redirect('index')
+
+@login_required
+def profilePage(request):
+    return render(request, 'userdetails/profile.html')
