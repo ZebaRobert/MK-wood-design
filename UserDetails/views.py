@@ -44,7 +44,7 @@ def profilePage(request):
     else:
         form = UserProfileForm(instance=request.user)
     
-    user_reviews = Reviews.objects.filter(author=request.user)
+    user_reviews = Reviews.objects.filter(author=request.user).order_by('-created_on')
     
     return render(request, 'userdetails/profile.html', {
         'form': form,
