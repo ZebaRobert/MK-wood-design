@@ -1,9 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
 <h1>Profile</h1>
-<p>Username: {{ user.username }}</p>
-<p>Email: {{ user.email }}</p>
+<div id="profile-info">
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>First name:</strong> {{ user.first_name|default:"Data not set" }}</p>
+    <p><strong>Last name:</strong> {{ user.last_name|default:"Data not set" }}</p>
+    <p><strong>Date of Birth:</strong> {{ user.date_of_birth|default:"Data not set" }}</p>
+    <p><strong>Phone number:</strong> {{ user.phone_number|default:"Data not set" }}</p>
+    <p><strong>Date Joined:</strong> {{ user.date_joined }}</p>
+    <button id="edit-button" class="btn btn-primary">Edit Information</button>
+</div>
 
+<div id="profile-form" style="display: none;">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Save</button>
+        <button type="button" id="cancel-button" class="btn btn-secondary">Cancel</button>
+    </form>
+</div>
 {% endblock %}
