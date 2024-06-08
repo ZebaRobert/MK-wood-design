@@ -74,3 +74,13 @@ def delete_review(request, review_id):
         review.delete()
         return redirect('profile')
     return render(request, 'userdetails/delete_review.html', {'review': review})
+
+@login_required
+def delete_profile(request):
+    user = request.user
+    if request.method == 'POST':
+        Reviews.objects.filter(author=user).delete()
+        logout(request)
+        user.delete()
+        return redirect('index')
+    return render(request, 'userdetails/delete_profile.html')
