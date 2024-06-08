@@ -54,3 +54,15 @@ def profilePage(request):
         'form': form,
         'user_reviews': user_reviews
     })
+
+@login_required
+def edit_review(request, review_id):
+    review = get_object_or_404(Reviews, id=review_id, author=request.user)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+    else:
+        form = ReviewForm(instance=review)
+    return render(request, 'userdetails/edit_review.html', {'form': form})
