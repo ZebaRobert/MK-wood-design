@@ -11,54 +11,54 @@
 </head>
 <body>
     <header>
-
+        <nav class="navbar navbar-expand-md navbar-light bg-rich-walnut-brown">
+            <a class="navbar-brand text-soft-cream" href="{% url 'index' %}">Logo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link text-soft-cream" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-soft-cream" href="{% url 'gallery' %}">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-soft-cream" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link text-soft-cream" href="{% url 'profile' %}">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-soft-cream" href="{% url 'logout' %}">Logout</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link text-soft-cream" href="{% url 'login' %}">Login / Register</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
     </header>
-    <nav class="navbar navbar-expand-md navbar-light">
-        <a class="navbar-brand" href="{% url 'index' %}">Logo</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-                </li>
-                {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'profile' %}">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-                    </li>
-                {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">Login / Register</a>
-                    </li>
-                {% endif %}
-            </ul>
-        </div>
-    </nav>
     
-    <main>
+    <main class="bg-soft-cream text-slate-gray">
         {% block content %}
         {% endblock %}
     </main>
+    
     <footer>
-        <div class="text-center p-4" style="background-color: var(--rich-walnut-brown);">
+        <div class="text-center p-4 bg-rich-walnut-brown">
             <div class="row">
                 <div class="col-md-4 text-md-start mb-3 mb-md-0">
                     <a href="#" class="text-reset me-4">
-                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-facebook-f text-soft-cream"></i>
                     </a>
                     <a href="#" class="text-reset me-4">
-                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-twitter text-soft-cream"></i>
                     </a>
                 </div>
                 <div class="col-md-4 my-auto">
@@ -66,15 +66,16 @@
                 </div>
                 <div class="col-md-4 text-md-end">
                     <a href="#" class="text-reset me-4">
-                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-instagram text-soft-cream"></i>
                     </a>
                     <a href="#" class="text-reset me-4">
-                        <i class="fab fa-tiktok"></i>
+                        <i class="fab fa-tiktok text-soft-cream"></i>
                     </a>
                 </div>
             </div>
         </div>
     </footer>
+    
     <script src="https://kit.fontawesome.com/352abb18d8.js" crossorigin="anonymous"></script>
     <script src="{% static 'js/profile.js' %}"></script>
     <script src="{% static 'js/gallery.js' %}"></script>
