@@ -43,8 +43,13 @@ a:hover {
     background-color: var(--rich-walnut-brown);
 }
 
+.navbar-nav {
+    padding: 0 50px;
+}
 .navbar-brand, .nav-link {
     color: var(--soft-cream) !important;
+    font-size: 1.25rem;
+    padding: 0 50px;
 }
 
 .nav-link:hover {
@@ -54,6 +59,7 @@ a:hover {
 .nav-item.active .nav-link {
     color: var(--forest-green) !important;
 }
+
 
 /* Buttons */
 
