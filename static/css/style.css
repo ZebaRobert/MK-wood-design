@@ -1,3 +1,11 @@
+:root {
+    --rich-walnut-brown: #4A2C2A;
+    --soft-cream: #F5F5DC;
+    --forest-green: #228B22;
+    --warm-amber: #FFBF00;
+    --slate-gray: #708090;
+}
+
 .gallery-container {
     position: relative;
     width: 100%;
@@ -41,4 +49,22 @@
     border: 1px solid #ddd;
     padding: 10px;
     margin-bottom: 10px;
+}
+
+/* Custom footer styles */
+footer {
+    background-color: var(--rich-walnut-brown);
+    color: var(--soft-cream);
+}
+
+footer a {
+    color: var(--soft-cream);
+}
+
+footer .text-light {
+    color: var(--soft-cream);
+}
+
+footer a:hover {
+    color: var(--warm-amber);
 }
