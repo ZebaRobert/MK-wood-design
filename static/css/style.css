@@ -6,6 +6,26 @@
     --slate-gray: #708090;
 }
 
+/* Navigation */
+
+.navbar {
+    background-color: var(--rich-walnut-brown);
+}
+
+.navbar-brand, .nav-link {
+    color: var(--soft-cream) !important;
+}
+
+.nav-link:hover {
+    color: var(--warm-amber) !important;
+}
+
+.nav-item.active .nav-link {
+    color: var(--forest-green) !important;
+}
+
+/* Gallery images section */
+
 .gallery-container {
     position: relative;
     width: 100%;
@@ -41,6 +61,8 @@
     padding: 10px;
 }
 
+/* Gallery reviews section */
+
 .reviews-box {
     margin-top: 20px;
 }
@@ -52,6 +74,7 @@
 }
 
 /* Custom footer styles */
+
 footer {
     background-color: var(--rich-walnut-brown);
     color: var(--soft-cream);
