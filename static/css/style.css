@@ -37,6 +37,17 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Buttons */
+
+.btn-primary {
+    background-color: var(--forest-green);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--warm-amber);
+}
+
 /* Navigation */
 
 .navbar {
@@ -60,17 +71,44 @@ a:hover {
     color: var(--forest-green) !important;
 }
 
-
-/* Buttons */
-
-.btn-primary {
-    background-color: var(--forest-green);
-    border: none;
+/* Hero Section */
+.hero-image {
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    position: relative;
 }
 
-.btn-primary:hover {
-    background-color: var(--warm-amber);
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--soft-cream);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+/* About Blocks */
+.about-block-left, .about-block-right {
+    padding: 20px;
+    background-color: var(--soft-cream);
+    border: 1px solid var(--slate-gray);
+    border-radius: 8px;
+}
+
+.about-block-left {
+    text-align: left;
+}
+
+.about-block-right {
+    text-align: right;
+}
+
+.about-title {
+    margin-bottom: 50px;
+}
+
 
 /* Gallery images section */
 
@@ -120,6 +158,47 @@ a:hover {
     padding: 10px;
     margin-bottom: 10px;
     background-color: var(--soft-cream);
+}
+
+/* General form styles */
+form {
+    background-color: var(--soft-cream);
+    border: 1px solid var(--slate-gray);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+form .form-group label {
+    color: var(--rich-walnut-brown);
+}
+
+form .form-group input, 
+form .form-group textarea {
+    border: 1px solid var(--slate-gray);
+    background-color: var(--soft-cream);
+    color: var(--slate-gray);
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+form .form-group input::placeholder, 
+form .form-group textarea::placeholder {
+    color: var(--slate-gray);
+}
+
+form .btn-primary {
+    background-color: var(--forest-green);
+    border: none;
+    color: var(--soft-cream);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+form .btn-primary:hover {
+    background-color: var(--warm-amber);
+    color: var(--rich-walnut-brown);
 }
 
 /* Custom footer styles */

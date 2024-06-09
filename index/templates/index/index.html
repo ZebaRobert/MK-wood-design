@@ -9,21 +9,22 @@
 </div>
 
 <!-- About Section -->
-<div class="container mt-5">
+<!-- About Section -->
+<div class="about-section mt-5">
     <h2 class="text-center mb-4">About</h2>
-    <div class="row">
+    <div class="row mx-0">
         {% for about in about_list %}
             {% if forloop.counter0|divisibleby:2 %}
-                <div class="col-md-6 mb-4">
-                    <div class="about-block-left">
-                        <h5>{{ about.title }}</h5>
+                <div class="col-12 mb-4">
+                    <div class="about-block about-block-left mx-auto">
+                        <h5 class="about-title">{{ about.title }}</h5>
                         <p>{{ about.content }}</p>
                     </div>
                 </div>
             {% else %}
-                <div class="col-md-6 mb-4 offset-md-6">
-                    <div class="about-block-right">
-                        <h5>{{ about.title }}</h5>
+                <div class="col-12 mb-4">
+                    <div class="about-block about-block-right mx-auto">
+                        <h5 class="about-title">{{ about.title }}</h5>
                         <p>{{ about.content }}</p>
                     </div>
                 </div>
