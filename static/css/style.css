@@ -172,8 +172,9 @@ form .form-group label {
     color: var(--rich-walnut-brown);
 }
 
-form .form-group input, 
-form .form-group textarea {
+form .form-group input,
+form .form-group textarea,
+form .form-group select {
     border: 1px solid var(--slate-gray);
     background-color: var(--soft-cream);
     color: var(--slate-gray);
@@ -181,9 +182,10 @@ form .form-group textarea {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 4px;
+    appearance: none; /* Removes default dropdown arrow for customization */
 }
 
-form .form-group input::placeholder, 
+form .form-group input::placeholder,
 form .form-group textarea::placeholder {
     color: var(--slate-gray);
 }
@@ -199,6 +201,14 @@ form .btn-primary {
 form .btn-primary:hover {
     background-color: var(--warm-amber);
     color: var(--rich-walnut-brown);
+}
+
+/* Custom select styles */
+form .form-group select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4gPHBhdGggZD0iTTEyIDZsLTQgNEw0IDZ6IiBmaWxsPSIjNzA4MDkwIiAvPiA8L3N2Zz4=') no-repeat right 10px center/8px 10px; /* Custom arrow */
 }
 
 /* Custom footer styles */
