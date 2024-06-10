@@ -27,6 +27,53 @@
                 </form>
             </div>
         </div>
+        <!-- Reviews Section -->
+        <div class="col-lg-8 mb-4">
+            <h2>Your Reviews</h2>
+            <div class="reviews-box">
+                {% if user_reviews %}
+                    {% for review in user_reviews %}
+                        <div class="review-card p-3 mb-3 bg-soft-cream rounded border border-slate-gray">
+                            <h4>{{ review.author.username }}</h4>
+                            <p>Rating: {{ review.get_rating_display }}</p>
+                            <p>{{ review.content }}</p>
+                            <small>{{ review.created_on }}</small>
+                            <div class="d-flex justify-content-end">
+                                <a href="{% url 'edit_review' review.id %}" class="btn btn-warning me-2">Edit</a>
+                                <a href="{% url 'delete_review' review.id %}" class="btn btn-danger">Delete</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center">
+                            {% if user_reviews.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ user_reviews.previous_page_number }}" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                            {% endif %}
+                            {% for num in user_reviews.paginator.page_range %}
+                                {% if user_reviews.number == num %}
+                                    <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                                {% elif num > user_reviews.number|add:'-3' and num < user_reviews.number|add:'3' %}
+                                    <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if user_reviews.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ user_reviews.next_page_number }}" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                {% else %}
+                    <p class="text-center">You have no reviews. Go to the <a href="{% url 'gallery' %}">gallery</a> to leave a review.</p>
+                {% endif %}
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
