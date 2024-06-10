@@ -7,24 +7,19 @@
 }
 
 /* General Styles */
-
 html, body {
     height: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--soft-cream);
+    color: var(--slate-gray);
+    padding: 0;
 }
 
 main {
     flex: 1;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: var(--soft-cream);
-    color: var(--slate-gray);
-    margin: 0;
-    padding: 0;
 }
 
 a {
@@ -38,18 +33,20 @@ a:hover {
 }
 
 /* Buttons */
-
 .btn-primary {
     background-color: var(--forest-green);
     border: none;
+    color: var(--soft-cream);
+    padding: 10px;
+    border-radius: 4px;
 }
 
 .btn-primary:hover {
     background-color: var(--warm-amber);
+    color: var(--rich-walnut-brown);
 }
 
 /* Navigation */
-
 .navbar {
     background-color: var(--rich-walnut-brown);
 }
@@ -57,6 +54,7 @@ a:hover {
 .navbar-nav {
     padding: 0 50px;
 }
+
 .navbar-brand, .nav-link {
     color: var(--soft-cream) !important;
     font-size: 1.25rem;
@@ -90,10 +88,11 @@ a:hover {
 }
 
 /* About Blocks */
-.about-block-left, .about-block-right {
+.about-block-left, .about-block-right, .review-card, #profile-info, #profile-form, .review-form {
     padding: 20px;
     background-color: var(--soft-cream);
     border-radius: 8px;
+    border: 1px solid var(--slate-gray);
 }
 
 .about-block-left {
@@ -107,7 +106,6 @@ a:hover {
 .about-title {
     margin-bottom: 50px;
 }
-
 
 /* Gallery Container */
 .gallery-container {
@@ -159,24 +157,49 @@ a:hover {
     z-index: 10;
 }
 
+/* Full Width Section */
+.full-width-section {
+    width: 100%;
+    padding: 0 5%;
+}
+
 /* Review Cards */
+.reviews-box {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    width: 100%;
+    margin: 0 auto;
+}
+
 .review-card {
-    background-color: var(--soft-cream);
-    border: 1px solid var(--slate-gray);
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
+    margin-right: 20px;
+    flex: 0 0 auto;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.review-card h4 {
+    color: var(--rich-walnut-brown);
+}
+
+.review-card p, .review-card small, #profile-info p, #profile-form p {
+    color: var(--slate-gray);
+}
+
+.review-card p {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Review Form */
 .review-form {
-    background-color: var(--soft-cream);
-    border: 1px solid var(--slate-gray);
-    border-radius: 8px;
-    padding: 20px;
     margin-top: 20px;
+    width: 90%;
+    margin: 0 auto;
 }
-
 
 /* General form styles */
 form {
@@ -186,13 +209,13 @@ form {
     padding: 20px;
 }
 
-form .form-group label {
+.form-group label {
     color: var(--rich-walnut-brown);
 }
 
-form .form-group input,
-form .form-group textarea,
-form .form-group select {
+.form-group input,
+.form-group textarea,
+.form-group select {
     border: 1px solid var(--slate-gray);
     background-color: var(--soft-cream);
     color: var(--slate-gray);
@@ -200,57 +223,17 @@ form .form-group select {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 4px;
-    appearance: none; /* Removes default dropdown arrow for customization */
+    appearance: none;
 }
 
-form .form-group input::placeholder,
-form .form-group textarea::placeholder {
+.form-group input::placeholder,
+.form-group textarea::placeholder {
     color: var(--slate-gray);
-}
-
-form .btn-primary {
-    background-color: var(--forest-green);
-    border: none;
-    color: var(--soft-cream);
-    padding: 10px;
-    border-radius: 4px;
-}
-
-form .btn-primary:hover {
-    background-color: var(--warm-amber);
-    color: var(--rich-walnut-brown);
 }
 
 /* Profile Info and Reviews Styling */
-#profile-info, .review-card, #profile-form {
-    background-color: var(--soft-cream);
-    border: 1px solid var(--slate-gray);
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-#profile-info p, .review-card p, #profile-form p {
-    color: var(--slate-gray);
-}
-
 #profile-info strong, .review-card h4 {
     color: var(--rich-walnut-brown);
-}
-
-.review-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.review-card p {
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.review-card small {
-    color: var(--slate-gray);
 }
 
 /* Reviews Container and Grid */
@@ -266,46 +249,36 @@ form .btn-primary:hover {
 }
 
 .reviews-grid .review-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     height: 100%;
 }
 
 /* Pagination Styling */
 .pagination {
-    margin-top: 20px; 
+    margin-top: 20px;
 }
 
-.pagination .page-item.active .page-link {
-    background-color: var(--rich-walnut-brown); 
+.page-item.active .page-link {
+    background-color: var(--rich-walnut-brown);
     color: var(--warm-amber);
     border-color: var(--rich-walnut-brown);
 }
 
-.pagination .page-link {
+.page-link {
     color: var(--rich-walnut-brown);
 }
 
-.pagination .page-link:hover {
+.page-link:hover {
     background-color: var(--warm-amber);
     color: var(--rich-walnut-brown);
     border-color: var(--warm-amber);
 }
 
-
-
-
 /* Custom select styles */
-form .form-group select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4gPHBhdGggZD0iTTEyIDZsLTQgNEw0IDZ6IiBmaWxsPSIjNzA4MDkwIiAvPiA8L3N2Zz4=') no-repeat right 10px center/8px 10px; /* Custom arrow */
+.form-group select {
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4gPHBhdGggZD0iTTEyIDZsLTQgNEw0IDZ6IiBmaWxsPSIjNzA4MDkwIiAvPiA8L3N2Zz4=') no-repeat right 10px center/8px 10px;
 }
 
 /* Custom footer styles */
-
 footer {
     background-color: var(--rich-walnut-brown);
     color: var(--soft-cream);
@@ -316,24 +289,23 @@ footer a {
     color: var(--soft-cream);
 }
 
-footer .text-light {
-    color: var(--soft-cream);
-}
-
 footer a:hover {
     color: var(--warm-amber);
 }
 
-/* Footer icon styles */
+footer .text-light {
+    color: var(--soft-cream);
+}
+
 footer .social-icons {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 100px; 
+    gap: 100px;
 }
 
 footer .social-icons i {
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
     transition: color 0.3s;
 }
 
@@ -341,13 +313,12 @@ footer .social-icons i:hover {
     color: var(--warm-amber);
 }
 
-/* Footer layout adjustments */
 footer .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap; 
-    padding: 0 40px; 
+    flex-wrap: nowrap;
+    padding: 0 40px;
 }
 
 footer .footer-content .copyright {
@@ -363,9 +334,7 @@ footer .footer-content .social-icons-right {
     padding: 0 20px;
 }
 
-
 /* Additional utility classes */
-
 .bg-rich-walnut-brown {
     background-color: var(--rich-walnut-brown);
 }
