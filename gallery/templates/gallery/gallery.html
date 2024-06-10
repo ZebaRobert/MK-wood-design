@@ -7,7 +7,7 @@
         <div class="gallery-slideshow">
             {% for image in images %}
                 <div class="slide">
-                    <img src="{{ image.image.url }}" alt="{{ image.title }}" class="img-fluid">
+                    <img src="{{ image.image.url }}" alt="{{ image.title }}" class="img-fluid rounded">
                     <div class="description p-3 bg-soft-cream">
                         <p>{{ image.description }}</p>
                     </div>
@@ -40,12 +40,14 @@
         <h3>Leave a Review</h3>
         <form method="post" class="p-4 bg-soft-cream rounded border border-slate-gray">
             {% csrf_token %}
-            {{ review_form.as_p }}
+            <div class="form-group">
+                {{ review_form.as_p }}
+            </div>
             <button type="submit" class="btn btn-primary w-100">Submit Review</button>
         </form>
     </div>
 {% else %}
-    <h2 class="text-center">You need to <a href="{% url 'login' %}">log in</a> to leave a review.</h2>
+    <h3 class="text-center">You need to <a class="custom-link" href="{% url 'login' %}">log in</a> to leave a review.</h3>
 {% endif %}
 
 {% endblock %}

@@ -197,10 +197,22 @@ a:hover {
     border: 1px solid var(--slate-gray);
     border-radius: 8px;
     padding: 20px;
-    margin-top: 20px;
+    margin-bottom: 20px !important;
     width: 90%;
     margin: 0 auto;
 }
+
+/* Custom Link Styles */
+.custom-link {
+    color: var(--rich-walnut-brown);
+    text-decoration: none;
+}
+
+.custom-link:hover {
+    color: var(--warm-amber);
+    text-decoration: underline;
+}
+
 
 /* General form styles */
 form {
