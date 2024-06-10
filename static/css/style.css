@@ -93,7 +93,6 @@ a:hover {
 .about-block-left, .about-block-right {
     padding: 20px;
     background-color: var(--soft-cream);
-    border: 1px solid var(--slate-gray);
     border-radius: 8px;
 }
 
@@ -110,12 +109,11 @@ a:hover {
 }
 
 
-/* Gallery images section */
-
+/* Gallery Container */
 .gallery-container {
     position: relative;
     width: 100%;
-    max-width: 800px;
+    max-width: 1200px;
     margin: auto;
     overflow: hidden;
 }
@@ -128,6 +126,19 @@ a:hover {
 .slide {
     min-width: 100%;
     box-sizing: border-box;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.description {
+    background-color: var(--soft-cream);
+    border-top: 1px solid var(--slate-gray);
+    padding: 10px;
 }
 
 .controls {
@@ -145,20 +156,27 @@ a:hover {
     border: none;
     cursor: pointer;
     padding: 10px;
+    z-index: 10;
 }
 
-/* Gallery reviews section */
+/* Review Cards */
+.review-card {
+    background-color: var(--soft-cream);
+    border: 1px solid var(--slate-gray);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
 
-.reviews-box {
+/* Review Form */
+.review-form {
+    background-color: var(--soft-cream);
+    border: 1px solid var(--slate-gray);
+    border-radius: 8px;
+    padding: 20px;
     margin-top: 20px;
 }
 
-.review-card {
-    border: 1px solid var(--slate-gray);
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: var(--soft-cream);
-}
 
 /* General form styles */
 form {
@@ -255,9 +273,14 @@ form .btn-primary:hover {
 }
 
 /* Pagination Styling */
+.pagination {
+    margin-top: 20px; 
+}
+
 .pagination .page-item.active .page-link {
-    background-color: var(--forest-green);
-    border-color: var(--forest-green);
+    background-color: var(--rich-walnut-brown); 
+    color: var(--warm-amber);
+    border-color: var(--rich-walnut-brown);
 }
 
 .pagination .page-link {
@@ -267,7 +290,9 @@ form .btn-primary:hover {
 .pagination .page-link:hover {
     background-color: var(--warm-amber);
     color: var(--rich-walnut-brown);
+    border-color: var(--warm-amber);
 }
+
 
 
 
