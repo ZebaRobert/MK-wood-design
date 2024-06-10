@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.core.paginator import Paginator
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import UserProfileForm, ReviewForm, CustomUserCreationForm
@@ -45,10 +46,14 @@ def profilePage(request):
         form = UserProfileForm(instance=request.user)
     
     user_reviews = Reviews.objects.filter(author=request.user).order_by('-created_on')
+    paginator = Paginator(user_reviews, 3)  # Show 3 reviews per page
+
+    page_number = request.GET.get('page')
+    user_reviews_page = paginator.get_page(page_number)
     
     return render(request, 'userdetails/profile.html', {
         'form': form,
-        'user_reviews': user_reviews
+        'user_reviews': user_reviews_page
     })
 
 @login_required

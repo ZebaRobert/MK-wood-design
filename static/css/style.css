@@ -203,6 +203,74 @@ form .btn-primary:hover {
     color: var(--rich-walnut-brown);
 }
 
+/* Profile Info and Reviews Styling */
+#profile-info, .review-card, #profile-form {
+    background-color: var(--soft-cream);
+    border: 1px solid var(--slate-gray);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#profile-info p, .review-card p, #profile-form p {
+    color: var(--slate-gray);
+}
+
+#profile-info strong, .review-card h4 {
+    color: var(--rich-walnut-brown);
+}
+
+.review-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.review-card p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.review-card small {
+    color: var(--slate-gray);
+}
+
+/* Reviews Container and Grid */
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.reviews-grid .review-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Pagination Styling */
+.pagination .page-item.active .page-link {
+    background-color: var(--forest-green);
+    border-color: var(--forest-green);
+}
+
+.pagination .page-link {
+    color: var(--rich-walnut-brown);
+}
+
+.pagination .page-link:hover {
+    background-color: var(--warm-amber);
+    color: var(--rich-walnut-brown);
+}
+
+
+
 /* Custom select styles */
 form .form-group select {
     -webkit-appearance: none;
