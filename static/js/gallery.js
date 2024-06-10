@@ -27,8 +27,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 reviewsBox.innerHTML = "";
                 data.reviews.forEach(review => {
                     let reviewCard = `
-                        <div class="review-card p-3 mb-3 bg-soft-cream rounded border border-slate-gray">
-                            <h4>${review.author}</h4>
+                        <div class="review-card p-3 m-2 bg-soft-cream rounded border border-slate-gray">
+                            <h3 class="text-center">${review.author}</h3>
+                            <hr>
                             <p>Rating: ${review.rating}</p>
                             <p>${review.content}</p>
                             <small>${review.created_on}</small>

@@ -166,19 +166,16 @@ a:hover {
 /* Review Cards */
 .reviews-box {
     display: flex;
-    overflow-x: auto;
     padding: 10px;
-    width: 100%;
+    width: 90%;
+    flex-wrap: wrap;
     margin: 0 auto;
+    justify-content: space-evenly;
 }
 
 .review-card {
-    margin-right: 20px;
-    flex: 0 0 auto;
-    width: 300px;
-    display: flex;
+    flex: 90% 0 auto;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .review-card h4 {
@@ -196,6 +193,10 @@ a:hover {
 
 /* Review Form */
 .review-form {
+    background-color: var(--soft-cream);
+    border: 1px solid var(--slate-gray);
+    border-radius: 8px;
+    padding: 20px;
     margin-top: 20px;
     width: 90%;
     margin: 0 auto;

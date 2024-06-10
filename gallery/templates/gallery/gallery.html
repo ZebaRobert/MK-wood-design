@@ -23,28 +23,29 @@
 
 <div class="full-width-section">
     <h2 class="text-center my-4">Reviews</h2>
-    <div class="reviews-box d-flex overflow-auto mx-auto">
+    <div class="reviews-box d-flex overflow-auto">
         {% for review in reviews %}
-            <div class="review-card p-3 m-2 bg-soft-cream rounded border border-slate-gray flex-shrink-0">
-                <h4>{{ review.author.username }}</h4>
+            <div class="review-card p-3 m-2 bg-soft-cream rounded border border-slate-gray">
+                <h3 class="text-center">{{ review.author.username }}</h3>
+                <hr>
                 <p>Rating: {{ review.get_rating_display }}</p>
                 <p>{{ review.content }}</p>
                 <small>{{ review.created_on }}</small>
             </div>
         {% endfor %}
     </div>
-
-    {% if user.is_authenticated %}
-        <div class="review-form mt-4 mx-auto">
-            <h3>Leave a Review</h3>
-            <form method="post" class="p-4 bg-soft-cream rounded border border-slate-gray">
-                {% csrf_token %}
-                {{ review_form.as_p }}
-                <button type="submit" class="btn btn-primary w-100">Submit Review</button>
-            </form>
-        </div>
-    {% else %}
-        <p class="text-center">You need to <a href="{% url 'login' %}">log in</a> to leave a review.</p>
-    {% endif %}
 </div>
+{% if user.is_authenticated %}
+    <div class="review-form mt-4 mx-auto" style="width: 40%;">
+        <h3>Leave a Review</h3>
+        <form method="post" class="p-4 bg-soft-cream rounded border border-slate-gray">
+            {% csrf_token %}
+            {{ review_form.as_p }}
+            <button type="submit" class="btn btn-primary w-100">Submit Review</button>
+        </form>
+    </div>
+{% else %}
+    <h2 class="text-center">You need to <a href="{% url 'login' %}">log in</a> to leave a review.</h2>
+{% endif %}
+
 {% endblock %}
