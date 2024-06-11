@@ -49,5 +49,8 @@
 {% else %}
     <h3 class="text-center">You need to <a class="custom-link" href="{% url 'login' %}">log in</a> to leave a review.</h3>
 {% endif %}
+<div id="feedback-message" class="alert alert-success" role="alert" style="display: none;">
+    Thank you for your feedback, we value it immensely.
+</div>
 
 {% endblock %}
