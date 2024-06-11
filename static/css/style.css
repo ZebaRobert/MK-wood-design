@@ -230,6 +230,14 @@ a:hover {
     margin: 0 auto;
 }
 
+.empty-box {
+    border: solid 1px var(--slate-gray);
+    border-radius: 20px;
+    width: 30%;
+    padding: 50px;
+    margin: 50px 0;
+}
+
 /* Custom Link Styles */
 .custom-link {
     color: var(--rich-walnut-brown);
