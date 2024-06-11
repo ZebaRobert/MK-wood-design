@@ -12,10 +12,14 @@ html, body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Noto Serif', serif;
     background-color: var(--soft-cream);
     color: var(--slate-gray);
     padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Play', sans-serif;
 }
 
 main {
@@ -107,8 +111,7 @@ a:hover {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Contact backgorund */
-
+/* Contact background */
 .contact-bg {
     background-image: url('/static/images/contact-desktop.jpeg');
     background-size: cover;
@@ -261,7 +264,6 @@ a:hover {
     text-decoration: underline;
 }
 
-
 /* General form styles */
 form {
     background-color: var(--soft-cream);
@@ -289,7 +291,7 @@ form {
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: var(--slate-gray);
+    color: var (--slate-gray);
 }
 
 /* Profile Info and Reviews Styling */
@@ -332,11 +334,6 @@ form {
     background-color: var(--warm-amber);
     color: var(--rich-walnut-brown);
     border-color: var(--warm-amber);
-}
-
-/* Custom select styles */
-.form-group select {
-    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4gPHBhdGggZD0iTTEyIDZsLTQgNEw0IDZ6IiBmaWxsPSIjNzA4MDkwIiAvPiA8L3N2Zz4=') no-repeat right 10px center/8px 10px;
 }
 
 /* Custom footer styles */
