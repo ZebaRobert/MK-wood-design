@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.core.paginator import Paginator
 from django.contrib.auth import authenticate, login, logout
@@ -15,6 +16,7 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
+                messages.success(request, 'Logged in successfully.')
                 return redirect('profile')
     else:
         form = AuthenticationForm()
@@ -26,13 +28,16 @@ def register_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
+            messages.success(request, 'Account created successfully.')
             return redirect('profile')
     else:
         form = CustomUserCreationForm()
     return render(request, 'userdetails/register.html', {'form': form})
 
+@login_required
 def logout_view(request):
     logout(request)
+    request.session['logout_message'] = 'Logged out successfully.'
     return redirect('index')
 
 @login_required
@@ -41,6 +46,7 @@ def profilePage(request):
         form = UserProfileForm(request.POST, request.FILES, instance=request.user)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Profile updated successfully.')
             return redirect('profile')
     else:
         form = UserProfileForm(instance=request.user)

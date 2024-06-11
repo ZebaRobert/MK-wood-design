@@ -9,8 +9,8 @@ def gallery_view(request):
     images = GalleryImage.objects.all()
     reviews = list(Reviews.objects.all())
     random.shuffle(reviews)
-    selected_reviews = reviews[:5]  # Take 5 random reviews
-
+    selected_reviews = reviews[:5]  # Take 5 random review
+    
     if request.method == 'POST' and request.headers.get('x-requested-with') == 'XMLHttpRequest':
         review_form = ReviewForm(request.POST)
         if review_form.is_valid():
