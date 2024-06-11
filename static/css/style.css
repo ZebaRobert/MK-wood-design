@@ -32,6 +32,26 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Feedback message */
+.toast {
+    background-color: var(--forest-green) !important;
+    color: var(--rich-walnut-brown) !important;
+}
+
+.toast .toast-header {
+    background-color: var(--forest-green) !important;
+    color: var(--rich-walnut-brown) !important;
+}
+
+.toast .toast-body {
+    color: var(--rich-walnut-brown) !important;
+    opacity: 1;
+}
+
+.toast .btn-close {
+    filter: invert(1);
+}
+
 /* Buttons */
 .btn-primary {
     background-color: var(--forest-green);

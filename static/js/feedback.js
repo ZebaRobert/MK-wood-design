@@ -1,8 +1,9 @@
  document.addEventListener("DOMContentLoaded", function(){
+    console.log('Document is ready');
 
     // Review form submission
     const reviewForm = document.getElementById('review-form');
-    const feedbackMessage = document.getElementById('feedback-message');
+    const feedbackToast = document.getElementById('feedback-toast');
 
     if (reviewForm) {
         reviewForm.addEventListener('submit', function(event) {
@@ -19,19 +20,17 @@
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    feedbackMessage.style.display = 'block';
-                    setTimeout(() => {
-                        feedbackMessage.style.display = 'none';
-                        reviewForm.reset();
-                    }, 3000);
+                    const toast = new bootstrap.Toast(feedbackToast);
+                    toast.show();
+                    reviewForm.reset();
                 } else {
-                    alert('There was an error submitting your review.');
+                    console.error('Error submitting review:', data.errors);
                 }
             })
             .catch(error => console.error('Error:', error));
         });
     }
- }) 
+});
 
     
 

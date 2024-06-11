@@ -11,17 +11,17 @@ def gallery_view(request):
     random.shuffle(reviews)
     selected_reviews = reviews[:5]  # Take 5 random reviews
 
-    review_form = None
-    if request.user.is_authenticated:
-        if request.method == 'POST':
-            review_form = ReviewForm(request.POST)
-            if review_form.is_valid():
-                review = review_form.save(commit=False)
-                review.author = request.user
-                review.save()
-                return redirect('gallery')
+    if request.method == 'POST' and request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        review_form = ReviewForm(request.POST)
+        if review_form.is_valid():
+            review = review_form.save(commit=False)
+            review.author = request.user
+            review.save()
+            return JsonResponse({'success': True})
         else:
-            review_form = ReviewForm()
+            return JsonResponse({'success': False, 'errors': review_form.errors})
+
+    review_form = ReviewForm() if request.user.is_authenticated else None
 
     return render(request, 'gallery/gallery.html', {
         'images': images,
@@ -33,7 +33,7 @@ def gallery_view(request):
 def review_list_view(request):
     reviews = list(Reviews.objects.all())
     random.shuffle(reviews)
-    selected_reviews = reviews[:5]  # Take 5 random reviews
+    selected_reviews = reviews[:5]
     reviews_data = [
         {
             "author": review.author.username,

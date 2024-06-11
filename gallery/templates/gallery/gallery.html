@@ -38,7 +38,7 @@
 {% if user.is_authenticated %}
     <div class="review-form mt-4 mx-auto" style="width: 40%;">
         <h3>Leave a Review</h3>
-        <form method="post" class="p-4 bg-soft-cream rounded border border-slate-gray">
+        <form method="post" class="p-4 bg-soft-cream rounded border border-slate-gray" id="review-form">
             {% csrf_token %}
             <div class="form-group">
                 {{ review_form.as_p }}
@@ -49,8 +49,16 @@
 {% else %}
     <h3 class="text-center">You need to <a class="custom-link" href="{% url 'login' %}">log in</a> to leave a review.</h3>
 {% endif %}
-<div id="feedback-message" class="alert alert-success" role="alert" style="display: none;">
-    Thank you for your feedback, we value it immensely.
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="feedback-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">Feedback</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Thank you for your feedback, we value it immensely.
+        </div>
+    </div>
 </div>
 
 {% endblock %}
