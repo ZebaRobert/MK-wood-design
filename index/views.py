@@ -15,4 +15,4 @@ def index(request):
     if 'logout_message' in request.session:
         messages.success(request, request.session.pop('logout_message'))
 
-    return render(request, 'index/index.html', {'about_list': about_list})
+    return render(request, 'index/index.html', {'about_list': about_list, 'current_path': request.path})

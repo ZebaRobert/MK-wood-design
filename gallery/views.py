@@ -26,7 +26,8 @@ def gallery_view(request):
     return render(request, 'gallery/gallery.html', {
         'images': images,
         'reviews': selected_reviews,
-        'review_form': review_form
+        'review_form': review_form,
+        'current_path': request.path
     })
 
 

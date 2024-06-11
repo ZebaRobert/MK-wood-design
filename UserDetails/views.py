@@ -20,7 +20,7 @@ def login_view(request):
                 return redirect('profile')
     else:
         form = AuthenticationForm()
-    return render(request, 'userdetails/login.html', {'form': form})
+    return render(request, 'userdetails/login.html', {'form': form, 'current_path': request.path})
 
 def register_view(request):
     if request.method == 'POST':
@@ -32,7 +32,7 @@ def register_view(request):
             return redirect('profile')
     else:
         form = CustomUserCreationForm()
-    return render(request, 'userdetails/register.html', {'form': form})
+    return render(request, 'userdetails/register.html', {'form': form, 'current_path': request.path})
 
 @login_required
 def logout_view(request):
@@ -59,7 +59,8 @@ def profilePage(request):
     
     return render(request, 'userdetails/profile.html', {
         'form': form,
-        'user_reviews': user_reviews_page
+        'user_reviews': user_reviews_page,
+        'current_path': request.path
     })
 
 @login_required
