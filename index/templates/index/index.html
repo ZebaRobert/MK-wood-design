@@ -16,14 +16,14 @@
         {% for about in about_list %}
             {% if forloop.counter0|divisibleby:2 %}
                 <div class="col-12 mb-4">
-                    <div class="about-block about-block-left mx-auto">
+                    <div class="about-block about-block-left">
                         <h5 class="about-title">{{ about.title }}</h5>
                         <p>{{ about.content }}</p>
                     </div>
                 </div>
             {% else %}
                 <div class="col-12 mb-4">
-                    <div class="about-block about-block-right mx-auto">
+                    <div class="about-block about-block-right">
                         <h5 class="about-title">{{ about.title }}</h5>
                         <p>{{ about.content }}</p>
                     </div>

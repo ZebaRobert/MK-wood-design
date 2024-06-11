@@ -5,11 +5,6 @@ from cloudinary.models import CloudinaryField
 
 class About(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    backgorund_image = CloudinaryField(
-        'bgIMG',
-        default='default/bgPH',
-        folder='background/'
-    )
     content = models.TextField()
     
     def __str__(self):

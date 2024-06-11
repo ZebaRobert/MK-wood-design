@@ -108,18 +108,26 @@ a:hover {
 }
 
 /* About Blocks */
-.about-block-left, .about-block-right, .review-card, #profile-info, #profile-form, .review-form {
+.review-card, #profile-info, #profile-form, .review-form {
     padding: 20px;
     background-color: var(--soft-cream);
     border-radius: 8px;
     border: 1px solid var(--slate-gray);
 }
 
+.about-block {
+    padding: 30px;
+    background-color: var(--soft-cream);
+    margin-top: 30px;
+    width: 60%;
+}
+
 .about-block-left {
-    text-align: left;
+    text-align: left;  
 }
 
 .about-block-right {
+    margin-left: 40% !important;
     text-align: right;
 }
 

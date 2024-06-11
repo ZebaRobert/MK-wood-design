@@ -69,6 +69,7 @@ def edit_review(request, review_id):
         form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Review updated successfully.')
             return redirect('profile')
     else:
         form = ReviewForm(instance=review)
@@ -79,6 +80,7 @@ def delete_review(request, review_id):
     review = get_object_or_404(Reviews, id=review_id, author=request.user)
     if request.method == 'POST':
         review.delete()
+        messages.success(request, 'Review deleted successfully.')
         return redirect('profile')
     return render(request, 'userdetails/delete_review.html', {'review': review})
 
@@ -89,5 +91,6 @@ def delete_profile(request):
         Reviews.objects.filter(author=user).delete()
         logout(request)
         user.delete()
+        request.session['logout_message'] = 'Your profile has been deleted successfully.'
         return redirect('index')
     return render(request, 'userdetails/delete_profile.html')
