@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% block background %}
 <div class="container mt-5">
     <div class="row">
         <!-- Profile Info Section -->
         <div class="col-lg-4 mb-4">
-            <h1>Profile</h1>
+            <h1 class="text-soft-cream">Profile</h1>
             <div id="profile-info" class="p-4 bg-soft-cream rounded border border-slate-gray">
                 <p><strong>Username:</strong> {{ user.username }}</p>
                 <p><strong>Email:</strong> {{ user.email }}</p>
@@ -30,7 +30,7 @@
 
         <!-- Reviews Section -->
         <div class="col-lg-8 mb-4">
-            <h2>Your Reviews</h2>
+            <h2 class="text-soft-cream">Your Reviews</h2>
             <div class="reviews-container">
                 {% if user_reviews %}
                     <div class="reviews-grid">
