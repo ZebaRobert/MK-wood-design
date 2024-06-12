@@ -14,6 +14,7 @@ from pathlib import Path
 import django_heroku
 import cloudinary
 import os
+import dj_database_url
 
 # Build paths inside the project.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -36,10 +37,11 @@ AUTH_USER_MODEL = 'userdetails.CustomUser'
 SECRET_KEY = 'django-insecure-8ww3@)9eg5dghw48k8(n3$(ub&rk0@9lnj7i5c+6mtj!2+)&o_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    'herokuapp.com',
+    'mk-wood-design.herokuapp.com',
+    'localhost',
 ]
 
 
@@ -68,6 +70,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'MKWoodDesign.urls'
@@ -95,14 +98,7 @@ WSGI_APPLICATION = 'MKWoodDesign.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'MKWoodDesign',
-        'USER': 'postgres',
-        'PASSWORD': 'zeba',
-        'HOST': 'localhost',
-        'PORT': '5432', 
-    }
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL")),
 }
 
 # Cloudinary 

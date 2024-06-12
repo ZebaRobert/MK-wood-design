@@ -99,7 +99,7 @@ a:hover {
 
 /* Hero Section */
 .hero-image {
-    background-image: url('/static/images/desktop-hero.jpeg');
+    background-image: url("/static/images/desktop-hero.b11349e5a20a.jpeg");
     background-size: cover;
     background-position: center;
     height: 60vh;
