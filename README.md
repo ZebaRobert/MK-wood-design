@@ -85,7 +85,7 @@ From the Epics, 24 User stories were developed. Each story was assigned a classi
     1. The home page provides the user with information about the company, its owner and goals.
     2. Users are gretted by a worm welcome message and a hero banner.
 
-![Home Page Wireframe]()
+![Home Page Wireframe](/docs/wireframe/wireframe-home.jpg)
 
 * Gallery Page:
   1. Users can see a gallery of images from companys previos projects.
@@ -93,38 +93,38 @@ From the Epics, 24 User stories were developed. Each story was assigned a classi
   3. Users can leave feedback about the company in the comment section
   4. Users can see feedback from other users in the comment section
 
-![Gallery Page Wireframe]()
+![Gallery Page Wireframe](/docs/wireframe/wireframe-gallery.jpg)
 
 * Contact Page:
   1. User can fill out the contact form to get in touch with the company
   2. Users can find all of the contact information as well as the location of the company under the contact form
 
-![Contact Form Wireframe]()
+![Contact Form Wireframe](/docs/wireframe/wireframe-contact.jpg)
 
 * Login / Register Pages:
   1. User can Login with existing account via login form or create an account via register form
 
-![Login Page Wireframe]()
-
-![Registracion From Wireframe]()
+![Login Page Wireframe](/docs/wireframe/wireframe-login.jpg)
 
 * Profile Page:
   1. User can see their information and preform full CRUD on their profile
   2. User can see the history of thair interactions with the web site and preform full CRUD functionaly on their comments
 
-![Profile Page Wireframe]()
+![Profile Page Wireframe](/docs/wireframe/wireframe-profile.jpg)
 
 #### Database Schema
 
 Several custom models were predicted to be required when building the site. With the intention to utilise AllAuth for the user authentication system, which utilises the built in Django User Model.
 
-![Database Schema Diagram]()
+![Database Schema Diagram](/docs/readme/1)
+![Database Schema Diagram](/docs/readme/2)
+![Database Schema Diagram](/docs/readme/3)
 
 ### The Surface Plane
 
 #### Design
 
-The color pallet was chosen using [Coolors.co]() website to mix and match what suited best for the website. These 5 colors have been chosen :
+The color pallet was chosen using [Coolors.co](https://coolors.co/) website to mix and match what suited best for the website. These 5 colors have been chosen :
     
     Rich Walnut Brown (#4A2C2A): This deep brown color mimics the natural tones of wood and conveys a sense of quality and sturdiness.
     Soft Cream (#F5F5DC): A light, creamy color that was used for backgrounds to keep the site feeling airy and open while complementing the darker tones.
