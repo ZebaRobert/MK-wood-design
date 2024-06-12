@@ -14,7 +14,9 @@ MKWoodDesign is a website dedicated to showcasing the exquisite craftsmanship of
         - [Wireframe mock-ups](#wireframe-mock-ups)
         - [Database Schema](#database-schema)
     - [The Surface Plane](#the-surface-plane)
-3. [Additional Features](#additional-features)
+        - [Design](#design)
+        - [Typography](#typography)
+        - [Images](#images)
 4. [Future Enhancements](#future-enhancements)
 5. [Testing](#testing)
     - [Testing Strategy](#testing-strategy)
@@ -34,10 +36,7 @@ MKWoodDesign is a website dedicated to showcasing the exquisite craftsmanship of
 
 [View the live website on Heroku]()
 
-Please note: To open any links in this document in a new browser tab, please press CTRL + Click.
-
-## Table of Contents
-
+Please note: To open any links in this document in a new browser tab, please press CTRL + Left Click.
 
 ## UX
 ### The Strategy Plane
@@ -71,7 +70,7 @@ From the Epics, 24 User stories were developed. Each story was assigned a classi
 **Features planned:**
 * User Profile - Create, Read, Update and Delete
 * Comment Section - Users can leave feedback for the company 
-* Comments Editing - Users can edit/delete their comments on the Profile Page under Interaction History section
+* Comments Editing - Users can edit/delete their comments on the Profile Page
 * Comment Moderation - Admin can moderate the comment section to hide/block user comments that are inappropriate
 * Gallery Section - Owner can display their past project and users can see them
 * Home/About Page - User can learn about the company its motives and the owner from small but comprehensive text sections 
@@ -90,10 +89,9 @@ From the Epics, 24 User stories were developed. Each story was assigned a classi
 
 * Gallery Page:
   1. Users can see a gallery of images from companys previos projects.
-  2. User can interact with the gallery to enhance Images 
-  3. Under the gallery section useres will find the comment section
-  4. Users can leave feedback about the company in the comment section
-  5. Users can see feedback from other users in the comment section
+  2. Under the gallery section useres will find the comment section
+  3. Users can leave feedback about the company in the comment section
+  4. Users can see feedback from other users in the comment section
 
 ![Gallery Page Wireframe]()
 
@@ -104,14 +102,10 @@ From the Epics, 24 User stories were developed. Each story was assigned a classi
 ![Contact Form Wireframe]()
 
 * Login / Register Pages:
-  1. User can Login with existing account via login form
-  2. User can see the Frogoten Credentals button
-  3. User is able to use their social media accounts to log in 
+  1. User can Login with existing account via login form or create an account via register form
 
 ![Login Page Wireframe]()
 
-  1. User can Register as a new user via registracion form
-  
 ![Registracion From Wireframe]()
 
 * Profile Page:
@@ -120,18 +114,9 @@ From the Epics, 24 User stories were developed. Each story was assigned a classi
 
 ![Profile Page Wireframe]()
 
-* Admin Comment Moderation Page:
-  1. Admin can see all of the comments listed on one page 
-  2. Admin has an option to hide inapropriate comments
-  3. Admin can block Useres from commenting if that is neccesery
-
-![Admin Command Managment Wireframe]()
-
-
-
 #### Database Schema
 
-Several custom models were predicted to be required when building the site. The intention to utilise AllAuth for the user authentication system, which utilises the built in Django User Model removed the need to build a custom User model.
+Several custom models were predicted to be required when building the site. With the intention to utilise AllAuth for the user authentication system, which utilises the built in Django User Model.
 
 ![Database Schema Diagram]()
 
@@ -139,13 +124,29 @@ Several custom models were predicted to be required when building the site. The 
 
 #### Design
 
-##### Typography 
+The color pallet was chosen using [Coolors.co]() website to mix and match what suited best for the website. These 5 colors have been chosen :
+    
+    Rich Walnut Brown (#4A2C2A): This deep brown color mimics the natural tones of wood and conveys a sense of quality and sturdiness.
+    Soft Cream (#F5F5DC): A light, creamy color that was used for backgrounds to keep the site feeling airy and open while complementing the darker tones.
+    Forest Green (#228B22): A muted green that reflects nature and sustainability, ideal for accents and buttons.
+    Warm Amber (#FFBF00): A warm, golden hue that was used to draw attention to key areas like calls-to-action and highlights.
+    Slate Gray (#708090): A cool, neutral gray that balances the warmer tones and can be used for text and secondary elements.
 
-##### Images
+#### Typography
 
-## Additional Features
+The default font used throughout the site for paragraphs, sections, spans, and other text elements is **Noto Serif**. For headings, titles, and other prominent text, the **Play** font has been utilized to ensure a clear hierarchy and enhance readability.
+
+#### Images
+
+The images on the site come from two primary sources: the company owner’s personal collection and a selection from Unsplash, ensuring a blend of authentic and high-quality visuals.
+
 
 ## Future Enhancements
+
+1. Dark / light toggle
+2. Language toggle
+3. Admin controle
+4. Visual enhancements
 
 ## Testing
 
@@ -159,35 +160,47 @@ All code files were validated using suitable validators for the specific languag
 
 #### Notable Bugs
 
+##### Unsloved Bugs
+
+1. If the user is not logged in at the time he opens the gallery page a pop up message will show thanking the user for leaving feedback even thou non was left.
+   
 #### Technologies Used
 
 * Python
     * The following python modules were used on this project:
-        * asgiref==3.5.0
-        * certifi==2021.10.8
-        * cffi==1.15.0
-        * charset-normalizer==2.0.12
-        * cloudinary==1.29.0
-        * cryptography==36.0.1
+        * asgiref==3.7.2
+        * bleach==6.1.0
+        * certifi==2023.11.17
+        * cffi==1.16.0
+        * charset-normalizer==3.3.2
+        * cloudinary==1.38.0
+        * crispy-bootstrap5==2023.10
+        * cryptography==42.0.2
         * defusedxml==0.7.1
-        * dj-database-url==0.5.0
+        * dj-database-url==2.1.0
         * dj3-cloudinary-storage==0.0.6
-        * Django==3.2
-        * django-allauth==0.48.0
-        * django-htmx==1.9.0
-        * gunicorn==20.1.0
-        * idna==3.3
-        * oauthlib==3.2.0
-        * psycopg2==2.9.3
+        * Django==5.0.1
+        * django-allauth==0.60.1
+        * django-crispy-forms==2.1
+        * django-heroku==0.3.1
+        * django-summernote==0.8.20.0
+        * gunicorn==21.2.0
+        * idna==3.6
+        * oauthlib==3.2.2
+        * packaging==23.2
+        * psycopg2==2.9.9
         * pycparser==2.21
-        * PyJWT==2.3.0
+        * PyJWT==2.8.0
         * python3-openid==3.2.0
-        * pytz==2021.3
-        * requests==2.27.1
+        * requests==2.31.0
         * requests-oauthlib==1.3.1
         * six==1.16.0
-        * sqlparse==0.4.2
-        * urllib3==1.26.8
+        * sqlparse==0.4.4
+        * typing_extensions==4.9.0
+        * tzdata==2023.4
+        * urllib3==2.2.0
+        * webencodings==0.5.1
+        * whitenoise==6.6.0 
 
 * Django
     * Django was used as the main python framework in the development of this project
@@ -197,14 +210,14 @@ All code files were validated using suitable validators for the specific languag
 * Heroku PostgreSQL
     * Heroku PostgreSQL was used as the database for this project during development and in production.
 * JavaScript
-    * Custom JavaScript was utilised to enable the colour scheme functionality, the mobile menu, the enabling and disabling of buttons on forms to prevent users inadvertantly causing errors when trying to submit multiple forms at the same time, and to display the current image in the form rather than a hyperlink to the image itself.
+    * Custom JavaScript was utilised to enable the colour scheme functionality, the mobile menu, the enabling and disabling of buttons and forms .
 * Bootstrap 5.13
     * Bootstrap was used for general layout and spacing requirements for the site.
 * Font Awesome
     * Was used for access to several icons for different sections where icons were appropriate.
 * CSS
     * Custom css was written for a large number of areas on the site to implement custom styling and escape a bootstrap look and feel to the site.
-* Jinja/Django Templating
+* Django Templating
     * Jinja/Django templating language was utilised to insert data from the database into the sites pages. It was also utilised to perform queries on different datasets.
 * HTML
     * HTML was used as the base language for the templates created for the site.
@@ -214,7 +227,7 @@ All code files were validated using suitable validators for the specific languag
 * VS Code was used to develop the site
 * Git was utilised for version control and transferring files between the code editor and the repository
 * GitHub was utilised for storing the files for this project
-* Balsamiq was utilised to develop wireframes for the site from which the design was based
+* FIgma was utilised to develop wireframes for the site from which the design was based
 * GIMP was used to adapt images for use within the site.
 * DrawSQL.app was used to develop the database schema during development
 
@@ -232,7 +245,7 @@ To deploy the project via Heroku, I followed these steps:
 
 1. Sign up or log in to [Heroku](https://www.heroku.com/).
 2. On the main Heroku Dashboard page, click on 'New' and then 'Create New App'.
-3. Provide a name for the project (e.g., The-Pantry) and select a suitable region, then click 'Create App'. Ensure the app name is unique.
+3. Provide a name for the project (e.g., mk-wood-design) and select a suitable region, then click 'Create App'. Ensure the app name is unique.
 4. This action creates the app within Heroku and directs you to the deploy tab. From there, navigate to the resources tab.
 5. Add the database to the app by searching for 'Heroku Postgres' in the add-ons section. Select the appropriate package and add 'Heroku Postgres' as the database.
 6. Go to the settings tab, then within the config vars section, copy the DATABASE_URL to the clipboard for later use in Django configuration.
@@ -253,7 +266,7 @@ To deploy the project via Heroku, I followed these steps:
 21. Link the file to the templates directory in Heroku by setting TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates').
 22. Change the templates directory to TEMPLATES_DIR - `DIRS': [TEMPLATES_DIR]`.
 23. Add Heroku to the ALLOWED_HOSTS list in the format: app name given in Heroku followed by .herokuapp.com.
-24. In your code editor, create three new top-level folders: media, static, and templates.
+24. In your code editor, create two new top-level folders:static, and templates.
 25. Create a new file in the top-level directory named Procfile.
 26. Inside the Procfile, add the code: `web: gunicorn PROJECT_NAME.wsgi`.
 27. In the terminal, add the changed files, commit, and push to GitHub.
@@ -265,4 +278,4 @@ To deploy the project via Heroku, I followed these steps:
 
 I'd like to thank the following:    
 * MattBCoding (Github Profile) and Gareth McGirr (Github Profile) for their incredible documentation, which I utilized to help shape my own readme.md and testing.md for this project. 
-* My Code Institute Mentor Graeme Taylor
+* My Code Institute Mentors Graeme Taylor and Mo Shami
