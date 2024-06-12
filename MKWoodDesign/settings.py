@@ -106,9 +106,9 @@ DATABASES = {
 # Cloudinary 
 
 cloudinary.config(
-    cloud_name=os.getenv('MKWoodDesign'),
-    api_key=os.getenv('783723727299137'),
-    api_secret=os.getenv('MoVCBZJ_znZFVULUlPjTFKGNVWg'),
+    cloud_name=os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    api_key=os.environ('CLOUDINARY_API_KEY'),
+    api_secret=os.environ('CLOUDINARY_API_SECRET'),
     cloudinary_url=os.environ.get('CLOUDINARY_URL')
 )
 
