@@ -1,1 +1,1 @@
-web: gunicorn mk-wood-design.wsgi --log-file -
+web: gunicorn MKWoodDesign.wsgi --log-file -
