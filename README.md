@@ -32,9 +32,9 @@ MKWoodDesign is a website dedicated to showcasing the exquisite craftsmanship of
 
 ## User Experience Design (UX)
 
-![Screenshot of homepage]()
+[Screenshot of homepage](/docs/readme/home-page.jpg)
 
-[View the live website on Heroku]()
+[View the live website on Heroku](https://mk-wood-design-0418729d9865.herokuapp.com/)
 
 Please note: To open any links in this document in a new browser tab, please press CTRL + Left Click.
 
@@ -51,19 +51,19 @@ This strategic approach ensures that MKWoodDesign serves as both an informative 
 
 #### Epics
 
-7 Epics were created which were then further developed into 24 User Stories. The details on each epic, along with the user stories linked to each one can be found in the project kanban board [here]()
+7 Epics were created which were then further developed into 24 User Stories. The details on each epic, along with the user stories linked to each one can be found in the project kanban board [here](https://github.com/users/ZebaRobert/projects/2/views/1)
 
-1. Initial Setup [#17]()
-2. User Profile Page [#21]()
-3. User Experience Enhancements [#28]()
-4. Contact Page [#31]()
-5. Comment Section [#33]()
-6. Basic Website Components [#38]()
-7. Documentation[#45]()
+1. Initial Setup [#17](https://github.com/ZebaRobert/MK-wood-design/issues/17)
+2. User Profile Page [#21](https://github.com/ZebaRobert/MK-wood-design/issues/21)
+3. User Experience Enhancements [#28](https://github.com/ZebaRobert/MK-wood-design/issues/28)
+4. Contact Page [#31](https://github.com/ZebaRobert/MK-wood-design/issues/31)
+5. Comment Section [#33](https://github.com/ZebaRobert/MK-wood-design/issues/33)
+6. Basic Website Components [#38](https://github.com/ZebaRobert/MK-wood-design/issues/38)
+7. Documentation[#45](https://github.com/ZebaRobert/MK-wood-design/issues/45)
 
 ### User Stories
 
-From the Epics, 24 User stories were developed. Each story was assigned a classification of Must-Have, Should-Have, Could-Have or Won't Have. The full list of User Stories, seperated by those completed and those pushed to a future release is available on the project [kanban board]().
+From the Epics, 24 User stories were developed. Each story was assigned a classification of Must-Have, Should-Have, Could-Have or Won't Have. The full list of User Stories, seperated by those completed and those pushed to a future release is available on the project [kanban board](https://github.com/users/ZebaRobert/projects/2/views/1).
 
 ### The Scope Plane
 
