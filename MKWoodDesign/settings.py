@@ -19,7 +19,6 @@ import dj_database_url
 # Build paths inside the project.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
-STATICFILES_DIRS = [BASE_DIR / "static"]
 
 # Load environment variables from env.py
 if os.path.isfile('env.py'):
@@ -40,7 +39,7 @@ SECRET_KEY = 'django-insecure-8ww3@)9eg5dghw48k8(n3$(ub&rk0@9lnj7i5c+6mtj!2+)&o_
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'mk-wood-design.herokuapp.com',
+    'mk-wood-design-a04477ff1ea4.herokuapp.com',
     'localhost',
 ]
 
@@ -143,6 +142,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
