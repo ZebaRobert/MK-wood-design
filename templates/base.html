@@ -15,81 +15,85 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-md navbar-light bg-rich-walnut-brown">
-            <a class="navbar-brand text-soft-cream" href="{% url 'index' %}"><img src="/static/images/mk-wood-logo-zeleni.png" alt="Logo"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand text-soft-cream" href="{% url 'index' %}"><img src="/static/images/mk-wood-logo-zeleni.png" alt="Logo" class="img-fluid"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item {% if current_path == '/' %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'index' %}">Home</a>
-                    </li>
-                    <li class="nav-item {% if current_path == '/gallery/' %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
-                    </li>
-                    <li class="nav-item {% if current_path == '/contact/' %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-                    </li>
-                    {% if user.is_authenticated %}
-                        <li class="nav-item {% if current_path == '/userdetails/profile/' %}active{% endif %}">
-                            <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item {% if current_path == '/' %}active{% endif %}">
+                            <a class="nav-link" href="{% url 'index' %}">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                        <li class="nav-item {% if current_path == '/gallery/' %}active{% endif %}">
+                            <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
                         </li>
-                    {% else %}
-                        <li class="nav-item {% if current_path == '/userdetails/login/' %}active{% endif %} {% if current_path == '/userdetails/register/' %}active{% endif %}">
-                            <a class="nav-link" href="{% url 'login' %}">Login / Register</a>
+                        <li class="nav-item {% if current_path == '/contact/' %}active{% endif %}">
+                            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
                         </li>
-                    {% endif %}
-                </ul>
+                        {% if user.is_authenticated %}
+                            <li class="nav-item {% if current_path == '/userdetails/profile/' %}active{% endif %}">
+                                <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item {% if current_path == '/userdetails/login/' %}active{% endif %} {% if current_path == '/userdetails/register/' %}active{% endif %}">
+                                <a class="nav-link" href="{% url 'login' %}">Login / Register</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
             </div>
         </nav>
-        
     </header>
-    
+
     <main class="bg-soft-cream text-slate-gray">
-        {% block content %}
-        {% endblock %}
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
     </main>
 
-    <div class="contact-bg">
-        {% block background %}
-        {% endblock %}
-    </div>
-    
     <footer>
         <div class="text-center p-4 bg-rich-walnut-brown">
-            <div class="footer-content">
-                <div class="social-icons social-icons-left">
-                    <a href="https://www.facebook.com/" class="text-reset" target="_blank">
-                        <i class="fab fa-facebook-f text-soft-cream"></i>
-                    </a>
-                    <a href="https://x.com/" class="text-reset" target="_blank">
-                        <i class="fab fa-twitter text-soft-cream"></i>
-                    </a>
+            <div class="row">
+                <div class="col-12 col-md-4 d-flex justify-content-center mb-3 mb-md-0">
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/" class="text-reset me-3" target="_blank">
+                            <i class="fab fa-facebook-f text-soft-cream"></i>
+                        </a>
+                        <a href="https://x.com/" class="text-reset" target="_blank">
+                            <i class="fab fa-twitter text-soft-cream"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="copyright">
-                    <span class="text-light">&copy; 2024 MKWoodDesign. All rights reserved.</span>
+                <div class="col-12 col-md-4 d-flex justify-content-center mb-3 mb-md-0">
+                    <div class="copyright">
+                        <span class="text-light">&copy; 2024 MKWoodDesign. All rights reserved.</span>
+                    </div>
                 </div>
-                <div class="social-icons social-icons-right">
-                    <a href="https://www.instagram.com/" class="text-reset" target="_blank">
-                        <i class="fab fa-instagram text-soft-cream"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/" class="text-reset" target="_blank">
-                        <i class="fab fa-tiktok text-soft-cream"></i>
-                    </a>
+                <div class="col-12 col-md-4 d-flex justify-content-center">
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/" class="text-reset me-3" target="_blank">
+                            <i class="fab fa-instagram text-soft-cream"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/" class="text-reset" target="_blank">
+                            <i class="fab fa-tiktok text-soft-cream"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
-    
 
     <script src="https://kit.fontawesome.com/352abb18d8.js" crossorigin="anonymous"></script>
     <script src="{% static 'js/feedback.js' %}"></script>
     <script src="{% static 'js/profile.js' %}"></script>
     <script src="{% static 'js/gallery.js' %}"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

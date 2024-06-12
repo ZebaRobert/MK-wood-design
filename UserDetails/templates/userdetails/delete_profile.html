@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{% block background %}
+{% block content %}
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-6 text-center">
-            <h1 class="display-4 mb-4 text-soft-cream">Delete Profile</h1>
-            <p class="text-soft-cream">Are you sure you want to delete your profile? This action cannot be undone and will delete all your reviews.</p>
+        <div class="col-md-6 col-12 text-center">
+            <h1 class="display-4 mb-4 ">Delete Profile</h1>
+            <p>Are you sure you want to delete your profile? This action cannot be undone and will delete all your reviews.</p>
             <form method="post" class="p-4 bg-soft-cream rounded border border-slate-gray">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-danger w-100 mb-2">Delete Profile</button>

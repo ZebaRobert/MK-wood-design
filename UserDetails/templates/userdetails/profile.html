@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{% block background %}
+{% block content %}
 <div class="container mt-5">
     <div class="row">
         <!-- Profile Info Section -->
-        <div class="col-lg-4 mb-4">
-            <h1 class="text-soft-cream">Profile</h1>
+        <div class="col-lg-4 col-12 mb-4">
+            <h1>Profile</h1>
             <div id="profile-info" class="p-4 bg-soft-cream rounded border border-slate-gray">
                 <p><strong>Username:</strong> {{ user.username }}</p>
                 <p><strong>Email:</strong> {{ user.email }}</p>
@@ -29,8 +29,8 @@
         </div>
 
         <!-- Reviews Section -->
-        <div class="col-lg-8 mb-4">
-            <h2 class="text-soft-cream">Your Reviews</h2>
+        <div class="col-lg-8 col-12 mb-4">
+            <h2>Your Reviews</h2>
             <div class="reviews-container">
                 {% if user_reviews %}
                     <div class="reviews-grid">
@@ -78,18 +78,18 @@
                 {% endif %}
             </div>
         </div>
+    </div>
+</div>
 
-        <!-- Feedback message -->
-        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-            <div id="feedback-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="toast-header">
-                    <strong class="me-auto">Notification</strong>
-                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
-                <div class="toast-body">
-                    {{ messages|join:" " }}
-                </div>
-            </div>
+<!-- Feedback message -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="feedback-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">Notification</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            {{ messages|join:" " }}
         </div>
     </div>
 </div>

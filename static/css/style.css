@@ -36,6 +36,10 @@ a:hover {
     text-decoration: underline;
 }
 
+.navbar-toggler {
+    margin-right: 20px;
+}
+
 /* Feedback message */
 .toast {
     background-color: var(--forest-green) !important;
@@ -115,9 +119,9 @@ a:hover {
 .contact-bg {
     background-image: url('/static/images/contact-desktop.jpeg');
     background-size: cover;
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
     margin: 0;
     padding: 0;
 }
@@ -428,3 +432,5 @@ footer .footer-content .social-icons-right {
 .text-slate-gray {
     color: var(--slate-gray);
 }
+
+

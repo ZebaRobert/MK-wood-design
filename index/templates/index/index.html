@@ -3,16 +3,15 @@
 {% block content %}
 <!-- Hero Section -->
 <div class="hero-image">
-    <div class="hero-text">
+    <div class="hero-text text-center">
         <h1 class="display-3">MK Wood Design</h1>
     </div>
 </div>
 
 <!-- About Section -->
-<!-- About Section -->
-<div class="about-section mt-5">
+<div class="about-section mt-5 container">
     <h2 class="text-center mb-4">About</h2>
-    <div class="row mx-0">
+    <div class="row">
         {% for about in about_list %}
             {% if forloop.counter0|divisibleby:2 %}
                 <div class="col-12 mb-4">

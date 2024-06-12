@@ -15,16 +15,16 @@
                 </div>
             {% endfor %}
         </div>
-        <div class="controls">
+        <div class="controls d-flex justify-content-between mt-3">
             <button class="prev btn btn-light">❮</button>
             <button class="next btn btn-light">❯</button>
         </div>
     </div>
 </div>
 
-<div class="full-width-section">
+<div class="full-width-section container mt-5">
     <h2 class="text-center my-4">Reviews</h2>
-    <div class="reviews-box d-flex overflow-auto">
+    <div class="reviews-box d-flex flex-wrap justify-content-center">
         {% for review in reviews %}
             <div class="review-card p-3 m-2 bg-soft-cream rounded border border-slate-gray">
                 <h3 class="text-center">{{ review.author.username }}</h3>
@@ -37,7 +37,7 @@
     </div>
 </div>
 {% if user.is_authenticated %}
-    <div class="review-form mt-4 mx-auto" style="width: 40%;">
+    <div class="review-form mt-4 mx-auto" style="max-width: 600px;">
         <h3>Leave a Review</h3>
         <form method="post" class="p-4 bg-soft-cream rounded border border-slate-gray" id="review-form">
             {% csrf_token %}
@@ -48,7 +48,7 @@
         </form>
     </div>
 {% else %}
-    <h3 class="text-center empty-box mx-auto">You need to <a class="custom-link" href="{% url 'login' %}">log in</a> to leave a review.</h3>
+    <h3 class="text-center empty-box mx-auto" style="max-width: 600px;">You need to <a class="custom-link" href="{% url 'login' %}">log in</a> to leave a review.</h3>
 {% endif %}
 
 <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
