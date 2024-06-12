@@ -33,7 +33,7 @@ AUTH_USER_MODEL = 'userdetails.CustomUser'
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-8ww3@)9eg5dghw48k8(n3$(ub&rk0@9lnj7i5c+6mtj!2+)&o_'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False

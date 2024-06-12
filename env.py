@@ -6,3 +6,4 @@ os.environ['EMAIL_HOST_PASSWORD'] = 'xfgt fvnn nxfp yudp'
 os.environ.setdefault(
     "CLOUDINARY_URL", "cloudinary://783723727299137:MoVCBZJ_znZFVULUlPjTFKGNVWg@dhnjqbynw"
 )
+os.environ['SECRET_KEY'] = 'django-insecure-8ww3@)9eg5dghw48k8(n3$(ub&rk0@9lnj7i5c+6mtj!2+)&o_'
