@@ -125,16 +125,12 @@ Several custom models were predicted to be required when building the site. With
 #### Design
 
 The color pallet was chosen using [Coolors.co]() website to mix and match what suited best for the website. These 5 colors have been chosen :
-
-Rich Walnut Brown (#4A2C2A): This deep brown color mimics the natural tones of wood and conveys a sense of quality and sturdiness.
-
-Soft Cream (#F5F5DC): A light, creamy color that was used for backgrounds to keep the site feeling airy and open while complementing the darker tones.
-
-Forest Green (#228B22): A muted green that reflects nature and sustainability, ideal for accents and buttons.
-
-Warm Amber (#FFBF00): A warm, golden hue that was used to draw attention to key areas like calls-to-action and highlights.
-
-Slate Gray (#708090): A cool, neutral gray that balances the warmer tones and can be used for text and secondary elements.
+    
+    Rich Walnut Brown (#4A2C2A): This deep brown color mimics the natural tones of wood and conveys a sense of quality and sturdiness.
+    Soft Cream (#F5F5DC): A light, creamy color that was used for backgrounds to keep the site feeling airy and open while complementing the darker tones.
+    Forest Green (#228B22): A muted green that reflects nature and sustainability, ideal for accents and buttons.
+    Warm Amber (#FFBF00): A warm, golden hue that was used to draw attention to key areas like calls-to-action and highlights.
+    Slate Gray (#708090): A cool, neutral gray that balances the warmer tones and can be used for text and secondary elements.
 
 #### Typography
 
@@ -172,40 +168,39 @@ All code files were validated using suitable validators for the specific languag
 
 * Python
     * The following python modules were used on this project:
-        *asgiref==3.7.2
-        *bleach==6.1.0
-        *certifi==2023.11.17
-        *cffi==1.16.0
-        *charset-normalizer==3.3.2
-        *cloudinary==1.38.0
-        *crispy-bootstrap5==2023.10
-        *cryptography==42.0.2
-        *defusedxml==0.7.1
-        *dj-database-url==2.1.0
-        *dj3-cloudinary-storage==0.0.6
-        *Django==5.0.1
-        *django-allauth==0.60.1
-        *django-crispy-forms==2.1
-        *django-heroku==0.3.1
-        *django-summernote==0.8.20.0
-        *gunicorn==21.2.0
-        *idna==3.6
-        *oauthlib==3.2.2
-        *packaging==23.2
-        *psycopg2==2.9.9
-        *pycparser==2.21
-        *PyJWT==2.8.0
-        *python3-openid==3.2.0
-        *requests==2.31.0
-        *requests-oauthlib==1.3.1
-        *six==1.16.0
-        *sqlparse==0.4.4
-        *typing_extensions==4.9.0
-        *tzdata==2023.4
-        *urllib3==2.2.0
-        *webencodings==0.5.1
-        *whitenoise==6.6.0
-
+        * asgiref==3.7.2
+        * bleach==6.1.0
+        * certifi==2023.11.17
+        * cffi==1.16.0
+        * charset-normalizer==3.3.2
+        * cloudinary==1.38.0
+        * crispy-bootstrap5==2023.10
+        * cryptography==42.0.2
+        * defusedxml==0.7.1
+        * dj-database-url==2.1.0
+        * dj3-cloudinary-storage==0.0.6
+        * Django==5.0.1
+        * django-allauth==0.60.1
+        * django-crispy-forms==2.1
+        * django-heroku==0.3.1
+        * django-summernote==0.8.20.0
+        * gunicorn==21.2.0
+        * idna==3.6
+        * oauthlib==3.2.2
+        * packaging==23.2
+        * psycopg2==2.9.9
+        * pycparser==2.21
+        * PyJWT==2.8.0
+        * python3-openid==3.2.0
+        * requests==2.31.0
+        * requests-oauthlib==1.3.1
+        * six==1.16.0
+        * sqlparse==0.4.4
+        * typing_extensions==4.9.0
+        * tzdata==2023.4
+        * urllib3==2.2.0
+        * webencodings==0.5.1
+        * whitenoise==6.6.0 
 
 * Django
     * Django was used as the main python framework in the development of this project
