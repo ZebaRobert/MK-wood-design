@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import django_heroku
 import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 import os
 import dj_database_url
 
@@ -102,8 +104,13 @@ DATABASES = {
 }
 
 # Cloudinary 
-          
-cloudinary.config(cloudinary_url=os.environ.get('CLOUDINARY_URL'))
+
+cloudinary.config(
+    cloud_name=os.getenv('CLOUDINARY_CLOUD_NAME'),
+    api_key=os.getenv('CLOUDINARY_API_KEY'),
+    api_secret=os.getenv('CLOUDINARY_API_SECRET'),
+    cloudinary_url=os.environ.get('CLOUDINARY_URL')
+)
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
