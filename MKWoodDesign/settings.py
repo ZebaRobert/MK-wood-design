@@ -41,7 +41,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'mk-wood-design-a04477ff1ea4.herokuapp.com',
+    'mk-wood-design.herokuapp.com',
     'localhost',
 ]
 
