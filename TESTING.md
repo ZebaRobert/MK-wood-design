@@ -75,52 +75,52 @@ Each device tested the site using the following browsers:
 
 ##Html
 
-*index.html
-[]()
+* index.html
+![index](/docs/validation/index.png)
 
-*gallery.html
-[]()
+* gallery.html
+![gallery](/docs/validation/gallery.png)
 
-*contact.html
-[]()
+* contact.html
+![contact](/docs/validation/contact.png)
 
-*successs.html
-[]()
+* successs.html
+![successs](/docs/validation/success.png)
 
-*delete_profile.html
-[]()
+* delete_profile.html
+![delete_profile](/docs/validation/delete_profile.png)
 
-*delete_review.html
-[]()
+* delete_review.html
+![delete_review](/docs/validation/delete_review.png)
 
-*edit_review.html
-[]()
+* edit_review.html
+1[edit_review](/docs/validation/edit_review.png)
 
-*login.html
-[]()
+* login.html
+![login](/docs/validation/login.png)
 
-*profile.html
-[]()
+* profile.html
+![profile](/docs/validation/profile.png)
 
-*register.html
-[]()
+* register.html
+![register](/docs/validation/register.png)
 
 
 ##CSS
 
 *style.css
-[]()
+![style](/docs/validation/style.png)
 
+##JavaScript
 
-#JavaScript
+* gallery.js
+![gallery](/docs/validation/gallery.js.png)
 
-*gallery.js
-[]()
+* feedback.js
+![feedback](/docs/validation/feedback.png)
 
-*feedback.js
-[]()
+* profile.js
+![profile](/docs/validation/profile.js.png)
 
-*profile.js
-[]()
 
 
