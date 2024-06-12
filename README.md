@@ -237,7 +237,7 @@ All code files were validated using suitable validators for the specific languag
 
 ## Deployment
 
-The site was deployed via Heroku, and the live link can be found here - [MKWoodDesign]()
+The site was deployed via Heroku, and the live link can be found here - [MKWoodDesign](https://mk-wood-design-0418729d9865.herokuapp.com/)
 
 ### Project Deployment
 
